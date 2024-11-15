@@ -1,0 +1,40 @@
+- t: name
+  id: index # This way it recognises uh stuff and will thus bold it in sidebar
+- t: group
+  name: film
+  ids:
+    - series-of-experiments
+    - guizhou
+    - a-rolling-stone-gathers-no-moss
+    - animus
+    - crows-mouth-film
+    - home-of-rocks
+    - fairytale
+    - me-and-my-babysitter
+    - growing-and-leaving
+    - intro-film
+- t: group
+  name: photography
+  ids:
+    - remember-the-wolf
+    - rooted
+# - t: group
+#   name: writing
+#   ids:
+#     - conversations-with-a-phantom-piano
+#     - crows-mouth
+#     - from-distant-shores
+#     - greys-gift
+#     - poison
+#     - surfacing
+- t: page
+  name: formal recognition
+  title_display: formal recognition
+  id: formal-recognition
+- t: page
+  name: bio
+  title_display: bio
+  id: bio
+# - t: single
+#   name: about
+#   id: about
