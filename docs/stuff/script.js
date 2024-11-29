@@ -288,6 +288,7 @@ const doautoscroll = _ => {
 	const scrollies = [...document.querySelectorAll('.recognition-pictures')]
 	const usertouched = new Array(scrollies.length).fill(false)
 	scrollies.forEach((e, i) => e.onmouseover = _ => usertouched[i] = true)
+	scrollies.forEach((e, i) => e.onmousedown = _ => usertouched[i] = true)
 
 	const started = document.timeline.currentTime
 	const loop = t => {
