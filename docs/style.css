@@ -142,8 +142,10 @@ a
 
 #about-pictures { padding: 0 1rem 0 1rem; display: grid; grid-template-columns: 1fr 1fr }
 
-.formal-recognition-pictures { display: flex; flex-direction: column; gap: 1rem; align-items: center}
-.formal-recognition-pictures img { width: 50% }
+.formal-recognition-pictures { display: flex; flex-direction: row; gap: 1rem; align-items: center; overflow: scroll }
+.formal-recognition-pictures img { height: 24rem }
+
+.formal-recognition-point { display: list-item; list-style-type: circle }
 
 h1 { position: relative }
 
