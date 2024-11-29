@@ -51,13 +51,13 @@ table {
 
 @font-face {
 	font-family: modern-font-haha;
-	src: url(stuff/ebvar.ttf);
+	src: url(stuff/FreightBig-Light.woff);
 	font-display: swap;
 }
 
 @font-face {
 	font-family: freight;
-	src: url(stuff/ebvar.ttf);
+	src: url(stuff/FreightBig-Light.woff);
 	font-display: swap;
 }
 
