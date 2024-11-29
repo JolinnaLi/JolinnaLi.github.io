@@ -288,7 +288,7 @@ const doautoscroll = _ => {
 	const scrollies = [...document.querySelectorAll('.recognition-pictures')]
 	const usertouched = new Array(scrollies.length).fill(false)
 	scrollies.forEach((e, i) => e.onmouseover = _ => usertouched[i] = true)
-	scrollies.forEach((e, i) => e.onmousedown = _ => usertouched[i] = true)
+	scrollies.forEach((e, i) => e.ontouchstart = _ => usertouched[i] = true) // mobile
 
 	const started = document.timeline.currentTime
 	const loop = t => {
@@ -296,8 +296,9 @@ const doautoscroll = _ => {
 		const needscroll = scrollies.filter((e, i) => usertouched[i] == false && e.parentNode != null)
 		if (needscroll.length === 0) return
 		needscroll.forEach(e => {
-			// console.log((1+Math.sin(t*0.001))/2)
-			e.scrollLeft = e.scrollLeftMax*(1+Math.sin((t-started)*0.0001-Math.PI/2))/2
+			// only firefox has e.scrollLeftMax I think
+			const scrollLeftMax = e.scrollWidth - e.clientWidth
+			e.scrollLeft = scrollLeftMax*(1+Math.sin((t-started)*0.0001-Math.PI/2))/2
 		})
 		requestAnimationFrame(loop)
 	}
