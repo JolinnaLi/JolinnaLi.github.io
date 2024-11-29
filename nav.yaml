@@ -29,11 +29,11 @@
 #     - surfacing
 - t: page
   name: recognition
-  title_display: recognition
+  title_display: Recognition
   id: recognition
 - t: page
   name: bio
-  title_display: bio
+  title_display: About
   id: bio
 # - t: single
 #   name: about

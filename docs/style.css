@@ -49,6 +49,8 @@ table {
 
 /** hello **/
 
+* { box-sizing: border-box }
+
 @font-face {
 	font-family: modern-font-haha;
 	src: url(stuff/FreightBig-Light.woff);
@@ -87,10 +89,10 @@ html { background-color: var(--main-bg-color); color: var(--main-text-color) }
 svg { height: 100%; width: 100%; overflow: visible; z-index: 1 }
 
 body
-	{ margin: 1rem
+	{ padding: 1rem
 	; display: grid
-	; grid-template-rows: max-content 1fr
 	; gap: 1.8rem
+	; min-height: 100vh
 	}
 
 nav details li
@@ -199,14 +201,14 @@ p a:hover, details a:hover, details a.current-page
 	body
 		{ grid-template-columns: 16rem 1fr
 		; width: 60rem
-		; margin: 2rem
+		; padding: 2rem
 		}
 	html { display: flex; justify-content: center }
 }
 
 /* mobile */
 @media (min-width: 56rem) {
-	body { margin: 3rem; gap: 10% }
+	body { padding: 3rem }
 }
 
 /* thumbnails */
