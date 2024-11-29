@@ -140,12 +140,16 @@ a
 	; color: var(--main-text-color)
 	}
 
-#about-pictures { padding: 0 1rem 0 1rem; display: flex; height: 24rem; justify-content: center }
+#bio { display: grid; grid-template-columns: 1fr 1.618fr; grid-template-rows: min-content min-content; gap: 1rem }
+#bio img { align-self: center }
+#bio p { grid-row-end: span 2 }
 
-.formal-recognition-pictures { display: flex; flex-direction: row; gap: 1rem; overflow: scroll }
-.formal-recognition-pictures img { height: 24rem; max-width: unset }
-.formal-recognition-point { display: list-item; list-style-type: circle }
-.formal-recognition-point, .formal-recognition-pictures { margin-inline-start: 1rem }
+/* #bio img { width: 12rem; float: left; margin-right: 1rem } */
+
+.recognition-pictures { display: flex; flex-direction: row; gap: 1rem; overflow: scroll }
+.recognition-pictures img { height: 24rem; max-width: unset }
+.recognition-point { display: list-item; list-style-type: circle }
+.recognition-point, .recognition-pictures { margin-inline-start: 1rem }
 
 h1 { position: relative }
 

@@ -219,7 +219,7 @@ for (const { title_display, id, date } of nav.filter(({t}) => t === 'page')) {
 		, navgroup: id
 		, title_display
 		, title_sidebar: title_display
-		, type: 'simple'
+		, type: 'raw'
 		, blocks_html: await Deno.readTextFile(`${MYDIR}/${id}.html`)
 		}
 	)

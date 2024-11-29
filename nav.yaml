@@ -28,9 +28,9 @@
 #     - poison
 #     - surfacing
 - t: page
-  name: formal recognition
-  title_display: formal recognition
-  id: formal-recognition
+  name: recognition
+  title_display: recognition
+  id: recognition
 - t: page
   name: bio
   title_display: bio

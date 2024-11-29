@@ -39,13 +39,14 @@ const display = short =>
 			// console.log(NAVAS.find(a => a.getAttribute('short') === short))
 			NAVAS.find(a => a.getAttribute('short') === short).classList.add('current-page') // css selector ok?
 		// })
-		console.log("Dynamicaly displaying: " + short)
+		// console.log("Dynamicaly displaying: " + short)
 		CONTENT.style.transition='opacity ease-in 0.1s'
 		CONTENT.style.opacity=0
 
 		CONTENT.addEventListener('transitionend', e => {
 			document.title = j[short].title_display
 			CONTENT.innerHTML = j[short].page
+			doautoscroll() // if not contain autoscroll, should not do anything (probably)
 			if(short === 'index') {
 				set_up_fun()
 			} else {
@@ -280,3 +281,26 @@ function set_up_fun()
 }
 
 if (curr_short === 'index') set_up_fun()
+
+/********* auto scroll thing */
+
+const doautoscroll = _ => {
+	const scrollies = [...document.querySelectorAll('.recognition-pictures')]
+	const usertouched = new Array(scrollies.length).fill(false)
+	scrollies.forEach((e, i) => e.onmouseover = _ => usertouched[i] = true)
+
+	const started = document.timeline.currentTime
+	const loop = t => {
+		// assume that parentNode == null means removed from dom
+		const needscroll = scrollies.filter((e, i) => usertouched[i] == false && e.parentNode != null)
+		if (needscroll.length === 0) return
+		needscroll.forEach(e => {
+			// console.log((1+Math.sin(t*0.001))/2)
+			e.scrollLeft = e.scrollLeftMax*(1+Math.sin((t-started)*0.0001-Math.PI/2))/2
+		})
+		requestAnimationFrame(loop)
+	}
+	requestAnimationFrame(loop)
+}
+
+doautoscroll()
