@@ -3,6 +3,7 @@
 - t: group
   name: film
   ids:
+    - whats-the-hurry
     - series-of-experiments
     - guizhou
     - a-rolling-stone-gathers-no-moss
