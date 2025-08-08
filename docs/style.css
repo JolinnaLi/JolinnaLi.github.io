@@ -144,7 +144,7 @@ a
 
 #bio { display: grid; grid-template-columns: 1fr 1.618fr; grid-template-rows: min-content min-content; gap: 1rem }
 #bio img { align-self: center }
-#bio p { grid-row-end: span 2 }
+#bio-text { grid-row-end: span 2 }
 
 /* #bio img { width: 12rem; float: left; margin-right: 1rem } */
 
