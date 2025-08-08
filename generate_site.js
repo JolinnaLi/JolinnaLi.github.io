@@ -29,11 +29,21 @@ const date2datedisp = date => {
 	return `<time>${FULLMONTHS[month]} ${year}</time>`
 }
 
+const vimeo2vimeodisp = vimeo => {
+	if (!vimeo) return ''
+	// Unlisted Vimeo video seems to have two parts: video id, unlisted hash.
+	// I expect this vimeo variable to have form "videoid/unlistedhash"
+	const parts = vimeo.split('/')
+	assert(parts.length >= 1, "Vimeo no parts?")
+	return `<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/${parts[0]}${parts.length > 1 ? `?h=${parts[1]}` : ''}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>`
+}
+
 const PAGEGEN =
-	{ "film": ({ title_display, yt, md_nullable, stills, date, date_display, blocks_html }) => {
+	{ "film": ({ title_display, yt, vimeo, md_nullable, stills, date, date_display, blocks_html }) => {
 		const yt_disp = yt
 			? `<iframe class=film-yt src="https://www.youtube.com/embed/${yt}" title="YouTube player for ${title_display}" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
 			: ''
+		const vimeo_disp = vimeo2vimeodisp(vimeo)
 		const stills_disp = stills.length === 0
 			? ''
 			: `<div class=stills>${stills.map(src => `<img class=still src='${src}'>`).join('')}</div>`
@@ -42,7 +52,7 @@ const PAGEGEN =
 
 		return `<div class=film-intro><h2 class=film-title>${title_display}</h2>`
 			+ `<div class=film-details><span>${DISPLAY_THE_DATE}</span><span>${md}</span></div>${blocks_html}</div>`
-			+ yt_disp + stills_disp
+			+ yt_disp + vimeo_disp + stills_disp
 	}
 	, "photography": ({ title_display, stills, blocks_html }) => {
 		const stills_disp = stills.length === 0
