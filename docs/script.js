@@ -246,6 +246,9 @@ document.querySelectorAll(".stills_slide").forEach(element => {
 		observer.observe(e)
 	})
 
+	// Necessary for initial stills that are larger than stills container
+	imgs[0].scrollIntoView({block: "nearest", inline: "center"})
+
 	rBut.onclick = e => {
 		const overlapping_indexes = new Set(Object.entries(overlaps).filter(([idx, ratio]) => ratio > 0).map(([idx]) => +idx))
 		let rightIndex = Math.max(...overlapping_indexes)
@@ -261,8 +264,6 @@ document.querySelectorAll(".stills_slide").forEach(element => {
 		if (overlapping_indexes.size === 1) leftIndex -= 1
 		if (leftIndex < 0) return // at the end
 		imgs[leftIndex].scrollIntoView({block: "nearest", inline: "center"})
-
-
 	}
 })
 

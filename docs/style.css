@@ -20,7 +20,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	/*! border: 0; */
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -84,17 +84,22 @@ body
 /* #film_list { background-color: blue } */
 /* #content { height: 90vh } */
 /* #section_films { height: 100%; overflow: hidden } */
-.content_section { height: 100%; overflow: hidden }
-#sidebar, #sidebar2, #section_home { padding: 2rem }
-#sidebar2 { line-height: 1.6 }
+.content_section { height: 100%; overflow: hidden; }
+#sidebar, #sidebar2, #section_home { padding: 4rem }
+#section_home { background-image: url("https://jolinnaliarchive.github.io/media/stills/home-remedies/3.webp"); background-size: contain; background-repeat: no-repeat; background-position: center; background-origin: content-box }
+
+#sidebar2 { padding: 4rem 0 4rem 0 }
+#sidebar2 { line-height: 1.6; font-size: 1.2rem }
 #sidebar2 a { color: black; text-decoration: none;}
 #sidebar { position: relative }
-#sidebar { font-size: 1.6rem; line-height: 1.6 }
+#sidebar li { font-size: 4rem; line-height: 1; margin-bottom: 1.6rem }
+#sidebar li:hover { cursor: pointer }
 #list_films { font-size: 1rem; line-height: 1.6 }
 #sidebar details summary { list-style: none }
 
 .still { min-width: 100%; flex-shrink: 0; }
-.still img { height: 25rem; max-width: unset !important; display: block }
+/* .still img { height: 25rem; max-width: unset !important; display: block } */
+.still img { height: 25rem; max-width: unset !important; display: block; margin-left: auto; margin-right: auto }
 .stills {
 	display: flex;
 	flex-direction: row;
@@ -109,7 +114,7 @@ details[open]::details-content { background-color: blue; position: absolute; lef
 .content_wrapper { overflow-y: auto; max-height: 100% }
 
 #section_home { height: 100%; height: 100% }
-#section_home > h1 { font-size: 4rem; text-align: right }
+#section_home > h1 { font-size: 8rem; text-align: right }
 
 #section_films section { padding: 6rem; }
 #section_shows section { padding: 2rem }
