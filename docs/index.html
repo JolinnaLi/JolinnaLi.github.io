@@ -1,1 +1,275 @@
-<!DOCTYPE html> <head> <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RJJVBLRBV"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-5RJJVBLRBV'); </script> <title>Jo Li</title> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta charset="UTF-8"> <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"> <link rel=stylesheet href="./style.css"> </head> <body> <div id=header><nav><a short=index id=name href=. class=current-page>Jo Li</a><details group='film'> <summary>film</summary> <ul> <li><a short='napa' class='title' href='napa'> <span group=film">NAPA</span> </a><li><a short='whats-the-hurry' class='title' href='whats-the-hurry'> <span group=film">what’s the hurry</span> </a><li><a short='series-of-experiments' class='title' href='series-of-experiments'> <span group=film">A Series of Experiments...</span> </a><li><a short='guizhou' class='title' href='guizhou'> <span group=film">Gui Zhou (Stories of the Return)</span> </a><li><a short='a-rolling-stone-gathers-no-moss' class='title' href='a-rolling-stone-gathers-no-moss'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/1.webp'> <span group=film">a rolling stone gathers no moss</span> </a><li><a short='animus' class='title' href='animus'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/animus/1.webp'> <span group=film">Animus</span> </a><li><a short='crows-mouth-film' class='title' href='crows-mouth-film'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/crows-mouth-film/1.webp'> <span group=film">crow’s mouth</span> </a><li><a short='home-of-rocks' class='title' href='home-of-rocks'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/home-of-rocks/1.webp'> <span group=film">home of rocks</span> </a><li><a short='fairytale' class='title' href='fairytale'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/fairytale/1.webp'> <span group=film">Fairytale</span> </a><li><a short='me-and-my-babysitter' class='title' href='me-and-my-babysitter'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/me-and-my-babysitter/1.webp'> <span group=film">Me and My Babysitter</span> </a><li><a short='growing-and-leaving' class='title' href='growing-and-leaving'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/growing-and-leaving/1.webp'> <span group=film">Growing and leaving</span> </a><li><a short='intro-film' class='title' href='intro-film'> <img class=thumb src='https://jolinnaliarchive.github.io/media/stills/intro-film/1.webp'> <span group=film">Intro Film</span> </a> </ul> </details><details group='photography'> <summary>photography</summary> <ul> <li><a short='remember-the-wolf' class='title' href='remember-the-wolf'> <span group=photography">Remember the Wolf</span> </a><li><a short='rooted' class='title' href='rooted'> <span group=photography">Rooted</span> </a> </ul> </details><a short='recognition' href='recognition'>recognition</a><a short='bio' href='bio'>bio</a></nav></div> <div id=content short=index><svg id=fun viewbox='-1000,-1000, 2000, 2000'></svg></div> </body> <script>const short_base = 'index'; const path2root = 'undefined'</script> <script src="./stuff/d3.v7.min.js"></script><script src="./stuff/d3-dispatch@3.js"></script><script src="./stuff/d3-quadtree@3.js"></script><script src="./stuff/d3-timer@3.js"></script><script src="./stuff/d3-force@3.js"></script><script src="./stuff/script.js"></script> 
+<!DOCTYPE html>
+<script>
+window.idToGroup = {"stories-of-the-sea":"films","guizhou":"films","a-rolling-stone-gathers-no-moss":"films","napa":"films","home-remedies":"films","animus":"films","series-of-experiments":"films","me-and-my-babysitter":"films","the-womb-is-an-altar-of-all-the-things-i-miss":"shows","the-hand-is-no-ones":"shows"}
+</script>
+<!-- <!DOCTYPE html> -->
+<link rel=stylesheet href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jolinna Yuan Li</title>
+</head>
+
+<body>
+	<div id="sidebar">
+		<h1 id="namebut">Jolinna Yuan Li</h1>
+		<br>
+		<ul>
+			<li id="but_films">films</li>
+			<li id="but_installation">installation</li>
+			<li id="but_about">about</li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="page_home" class="page">
+			<div class="align_under_name">
+				<div>Jo is currently an Aunspaugh Fellow at the University of Virginia</div>
+				<br>
+				<pre>upcoming:
+Second Street Gallery Show Oct 2nd
+Ivy Creek Showcase Nov 15th</pre>
+	<br>
+	<img src="../../media/docs//stills/home-remedies/11.webp" >
+
+			</div>
+		</div>
+
+		<div id="page_films" class="page" hidden>
+			<div class="content_scrollcontainer">
+
+
+				<div id="film_grid" class="align_under_name">
+
+				<div><a href="#stories-of-the-sea"><img src="https://jolinnaliarchive.github.io/media/stills/stories-of-the-sea/1.webp" /></a><div><a href="#stories-of-the-sea">Stories of the Sea</a></div><div>120 min</div></div><div><a href="#guizhou"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/9.webp" /></a><div><a href="#guizhou">Gui Zhou (Stories of the Return)</a></div><div>48 min</div></div><div><a href="#a-rolling-stone-gathers-no-moss"><img src="https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/1.webp" /></a><div><a href="#a-rolling-stone-gathers-no-moss">a rolling stone gathers no moss</a></div><div>10 min</div></div><div><a href="#napa"><img src="https://jolinnaliarchive.github.io/media/stills/napa/1.webp" /></a><div><a href="#napa">NAPA</a></div><div>35 min</div></div><div><a href="#home-remedies"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/3.webp" /></a><div><a href="#home-remedies">home remedies</a></div><div>10 min</div></div><div><a href="#animus"><img src="https://jolinnaliarchive.github.io/media/stills/animus/1.webp" /></a><div><a href="#animus">Animus</a></div><div>10 min</div></div><div><a href="#series-of-experiments"><img src="https://jolinnaliarchive.github.io/media/stills/series-of-experiments/2.webp" /></a><div><a href="#series-of-experiments">timeplace</a></div><div>10 min</div></div><div><a href="#me-and-my-babysitter"><img src="https://jolinnaliarchive.github.io/media/stills/me-and-my-babysitter/19.webp" /></a><div><a href="#me-and-my-babysitter">Me and My Babysitter</a></div><div>8 min</div></div>
+
+
+				</div>
+			</div>
+		</div>
+
+<div id="film_stories-of-the-sea" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>Stories of the Sea | 120 min</h2><p class="subtitle">Feature film co-directed in spring of 2026, written by Kuei-Lan Anna Ma. In post production.</p><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/stories-of-the-sea/2.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/stories-of-the-sea/3.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/stories-of-the-sea/4.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/stories-of-the-sea/5.webp" alt="Goldfish"></div></div><div class="summary"><p>Set in 20th-century Taiwan, an era when parenting was often strict and traditional, Guxin—a 26- year-old city woman—has just lost the mother she both loved and resisted. Newly unmoored and tasting a fragile sense of freedom, she sets out on her first journey to Pengzhen Island, a place she never had the chance to visit in her youth. There, she breaks off an arranged engagement and falls deeply in love with Haiwang, a gentle, enigmatic fisherman-photographer. But reality intervenes: Guxin must return to the city, and Haiwang to the sea. They part with an unwavering hope of finding each other again. Back home, news of a shipwreck announces Haiwang’s death. Guxin buries her grief in silence. But one day, on the street, she sees him again. Alive.</p></div><div class="film_video"></div></main></div></div><div id="film_guizhou" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>Gui Zhou (Stories of the Return) | 48 min</h2><p class="subtitle">Written and shot in Taipei, Taiwan in the summer of 2024. GuiZhou is a project that has been greatly supported by the University of Virginia, having received three significant grants: the University Undergraduate Award for Arts Project, the Miller Arts Rising 4th Year Award, and the Echols Ingrassia Research Fund. The film premiered at the 48th Asian American International Film Festival in 2025.</p><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/10.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/1.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/11.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/12.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/2.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/guizhou/4.webp" alt="Goldfish"></div></div><div class="summary"><p>American film director Yu Ge travels to Taipei, Taiwan, to shoot a script that her mother was never able to complete before her passing, in hopes of gaining a better understanding of her mother’s homeland and heritage. Two stories of searching are told in parallel—the present-day story of a director and the film within her film, set during the 1980s Taiwan economic boom. As generational, cultural, and geographical gaps are tested, Yu Ge’s tenuous relationships with her actors and her late mother are pushed to the brink.</p></div><div class="film_video"><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1026755148?h=1effe7e622" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div></main></div></div><div id="film_a-rolling-stone-gathers-no-moss" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>a rolling stone gathers no moss | 10 min</h2><p class="subtitle">Made in the summer of 2023 at Mountain Lake Art Residency in Pembroke, Virginia</p><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/3.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/4.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/10.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/7.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/a-rolling-stone-gathers-no-moss/9.webp" alt="Goldfish"></div></div><div class="summary"><p>a rolling stone gathers no moss addresses collective art-making through resonant conversations and lingering stretches of shared imagination. At the secluded Biological Research Station at Pembroke, Virginia, an analogous relationship between creative and scientific processes surfaced. It was one of trial and error, and at times, much frustration. When things come to a halt, one turns to community, conversing and exchanging ideas until it feels right to venture out again. And the effect is often a rippling one. The flow of inspiration from person to person, like the complex ecological networks that surround us, underscore the symbiotic relationship between the creator of the film and the many creators within the film. Between the artists, fantastical visions are transposed and realized, while ideas of transparency, authorial voice, and “candidness” are stretched, amplified, and questioned. This film was first screened at Mountain Lake at our student Artlab Showcase, and later shown in Ruffin Group Exhibition in November.</p></div><div class="film_video"><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1026755148?h=1effe7e622" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div></main></div></div><div id="film_napa" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>NAPA | 35 min</h2><p class="subtitle">Undergraduate thesis film that was showcased in Ruffin Gallery as a part of the show the hand is no one's.</p><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/napa/2.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/napa/9.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/napa/10.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/napa/1.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/napa/6.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/napa/3.webp" alt="Goldfish"></div></div><div class="summary"><p>Three strangers meet in a park. Their conversation digresses, esses and flows. Are they evading an ending? Their imagination can only take them so far, but still, they take flight, hoping to suspend each other, or themselves, in story. A fisherman. A deer. A cabbage. Time multiplies and expands to hold their stories, but only for so long.</p></div><div class="film_video"><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1078418083" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div></main></div></div><div id="film_home-remedies" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>home remedies | 10 min</h2><p class="subtitle">Experimental film shot with iphone during Yeyin Residency in Taichung, Taiwan December 2025 - January 2026</p><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/2.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/9.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/10.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/6.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/4.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/home-remedies/11.webp" alt="Goldfish"></div></div><div class="summary"><p>Lost things in a dark river, a hand combing through it. A child on the search for order does it in secret to preserve its sacredness. Time precipitates. It gathers in low places. But the juvenile rituals remain. Praying morphs into home remedies made with glistening wax apples before finally taking form through the iris of the camera, where another system of faith is constructed.</p></div><div class="film_video"><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1184294357?h=cac44f2270" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div></main></div></div><div id="film_animus" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>Animus | 10 min</h2><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/animus/2.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/animus/5.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/animus/1.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/animus/8.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/animus/3.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/animus/4.webp" alt="Goldfish"></div></div><div class="summary"><p>Animus is inspired by Taiwanese superstition and Greek mythology. While painting in a field, Daphne, an uninspired artist, is surprised by a mysterious Red figure that has something to show her. Animus explores the ways in which we bar ourselves from reaching our true potential and the experience of embracing the process.</p></div><div class="film_video"><div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1026755148?h=1effe7e622" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script></div></main></div></div><div id="film_series-of-experiments" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>timeplace | 10 min</h2><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/series-of-experiments/1.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/series-of-experiments/3.webp" alt="Goldfish"></div></div><div class="summary"><p>An experimental series exploring memory, time, and distance, through conversation and performance. How do we in a digital age connect and reminisce? Plays with the use of greenscreen and mirrors.</p></div><div class="film_video"></div></main></div></div><div id="film_me-and-my-babysitter" class="page filmpage" hidden><div class="content_scrollcontainer"><main><h2>Me and My Babysitter | 8 min</h2><div class="image-grid"><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/me-and-my-babysitter/2.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/me-and-my-babysitter/6.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/me-and-my-babysitter/11.webp" alt="Goldfish"></div><div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/me-and-my-babysitter/9.webp" alt="Goldfish"></div></div><div class="summary"><p>How do we learn to do bad things? And how does our knowledge of evil inform our adolescence? These questions are explored in this film through learned transgressions. In a way, by learning how to be cruel, a girl grows up.</p></div><div class="film_video"><iframe class=film-yt src="https://www.youtube.com/embed/OAnNDhukNuo" title="YouTube player for Me and My Babysitter" frameborder=0 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></main></div></div>
+
+<div id="film_fairytale" class="page vpage" hidden><div class="content_scrollcontainer">
+	<main>
+		<h2>home remedies | 10 min</h2>
+
+		<p class="subtitle">Experimental film shot with iphone during Yeyin Residency in Taichung, Taiwan December 2025 - January 2026</p>
+
+		<p class="summary-p">Lost things in a dark river, a hand combing through it. A child on the search for order does it in secret to preserve its sacredness. Time precipitates. It gathers in low places. But the juvenile rituals remain. Praying morphs into home remedies made with glistening wax apples before finally taking form through the iris of the camera, where another system of faith is constructed.</p>
+
+		<div class="image-grid">
+			<div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/fairytale/1.webp" alt="Goldfish"></div>
+			<div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/fairytale/2.webp" alt="Pool side"></div>
+			<div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/fairytale/3.webp" alt="Water shadow"></div>
+			<div class="img-box"><img src="https://jolinnaliarchive.github.io/media/stills/fairytale/4.webp" alt="Wax apple"></div>
+		</div>
+
+	</main>
+	</div>
+</div>
+
+		<div id="page_installation" class="page align_under_name" hidden>
+			<div class="content_scrollcontainer">
+			<div id="installation_grid">
+					<figure>
+						<a href="#womb">
+							<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/2.webp" />
+						</a>
+						<figcaption><a href="#womb">the womb is an altar of <br> all the things i miss</a></figcaption>
+						<figcaption class="location">Taichung, Taiwan</figcaption>
+					</figure>
+
+					<figure>
+						<a href="#hand">
+						<img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/5.webp" />
+						</a>
+						<figcaption><a href="#hand">the hand is no one's <br> by JAR</a></figcaption>
+						<figcaption class="location">Ruffin Gallery in Charlottesville, Virginia</figcaption>
+					</figure>
+			</div>
+			</div>
+		</div>
+		<div id="installation_womb" class="page" hidden>
+			<div class="content_scrollcontainer">
+				<h2>the womb is an altar of all the things i miss | Gallery Show</h2>
+				<div class="subtitle">January 2026 Lei Gallery in Taichung, Taiwan <br> in collaboration with Autumn Samone</div>
+
+				<div class="rowgrid rg5">
+				<div class="first_cell">
+					Do you have any secret dreams, leaping like moving feet?
+					We invite you into a cradle for all the desires that have not
+					gone away, only transferred and displaced; things that have
+					been given and kept for good.
+
+					<br><br>
+					This Duo Show, as a part of the Yeyin Art Residency,
+					consists multi-media installation, painting, and three films:
+
+					<ul>
+					<li><i>home remedies</i>, by Jolinna Li</li>
+					<li><i>Ballooning under a dirty cocoon</i>, by Autumn Samone</li>
+					<li><i>Rebel Without a Cause</i>, by Judy Zhao, writing by Jolinna Li</li>
+					</ul>
+				</div>
+				<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/5.webp">
+				</div>
+
+				<div class="rowgrid rg1">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/9.webp">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/19.webp">
+				</div>
+
+								<div class="rowgrid rg1">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/14.webp">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/6.webp">
+				</div>
+
+				<div class="rowgrid rg3">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/18.webp">
+					<div class="my-p">
+					<p>
+Interactive part of the exhibit, as an excercise in
+ritual making, a modern altar was made with code
+and analog buttons.
+<br><br>
+Participants can hear a previous message recorded
+by another person and then proceed to record their
+own voice message, with the new message
+overwriting the previous one.
+<br><br>
+This was made with the help of James Huang.
+						</p>
+						</div>
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/7.webp">
+				</div>
+
+				<div class="rowgrid rg2">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/8.webp">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/20.webp">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-womb-is-an-altar-of-all-the-things-i-miss/15.webp">
+				</div>
+			</div>
+		</div>
+		<div id="installation_hand" class="page" hidden>
+			<div class="content_scrollcontainer">
+
+			<!-- Main Content Area -->
+			<main>
+
+			<h2>the hand is no one's | Trio Show by JAR</h2>
+			<p class="subtitle">April 2025 Ruffin Gallery in Charlottesville, Virginia in collaboration with Autumn Samone and Rian Gonzalez</p>
+
+			<!-- Left Text Column -->
+
+			<div class="rowgrid rg1">
+				<p>
+
+
+					Stories can be thought of as arrows, or bullets, a
+					bowed line from exposition to rising action to climax
+					to resolution. But sometimes the line begins to curl
+					into itself, spiraling inwards and outwards.
+					<br>
+					<br>
+					JAR is an entity of three artists, a collective vehicle
+					that then creates a space to hold an imagined future
+					that is reborn from past entanglements. The gallery
+					is reconfigured as both an archive of memory and a
+					space of community formation, where collective
+					histories give rise to new modes of encounter.
+				</p>
+				<img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/7.webp" alt="Goldfish">
+			</div>
+			</main>
+			<div id="handgrid">
+				<div class="hstack"><img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/8.webp" alt="Goldfish"></div>
+				<div class="vstack mytext">
+				<pre>i came here with my mom
+whose mom closed her eyes
+glued shut to never return
+Until the sky flipped over
+
+Ughhhh to feel how it’s always been
+and know
+our scalps was built in the womb of the most desired
+
+they came for me, and maybe it was the end of the world,
+the end of my world, the ends of our worlds-
+to stare at the face of death and giggle
+
+bathed by an unclean death
+</pre>
+
+<div class="mincenter">
+<pre>
+-we lived inside in stead , used the dirt to hide our names
+trade a green pinky for a cruel thumb,
+disguise only by those who shut their lids
+, so good we even fooled ourselves
+skipping in halls came close
+to piss captured in cups
+delighted, indulgent even
+curvaceous bodies, starvacious tongues
+deflating their pipes to find that
+and just that, maybe
+the flare was plural and too smooth
+to make its way to the mouth of someone
+who held their feet to the ground</pre>
+</div>
+</div>
+				<div class="vstack">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/9.webp" alt="Goldfish">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/10.webp" alt="Goldfish">
+				</div>
+				<div class="vstack">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/11.webp" alt="Goldfish">
+					<img src="https://jolinnaliarchive.github.io/media/stills/the-hand-is-no-ones/12.webp" alt="Goldfish">
+				</div>
+			</div>
+			</div>
+		</div>
+		<div id="page_about" class="page align_under_name" hidden>
+			<section class="content_scrollcontainer">
+					<div id="bio">
+
+
+						<div class="vstack1 right_float skinny">
+							<img  src="https://jolinnaliarchive.github.io/media/bio/0.webp">
+
+							<div>Contact: <a href="mailto:jolinnayli@gmail.com"><u>jolinnayli@gmail.com</u></a></div>
+							<div>CV: <a target="_blank" href="./Li_Jolinna_CV.pdf"><u>PDF</u></a></div>
+						</div>
+
+
+
+
+							<p>Jolinna Li is an artist, writer, and filmmaker born and raised
+between Charlottesville, Virginia; Taipei, Taiwan; and
+Shanghai, China. Li is currently an Aunspaugh Fellow for the
+2026-2027 academic year.
+
+<p>Jolinna Li is an interdisciplinary artist, writer, and filmmaker
+who grew up between Charlottesville, Virginia; Taipei, Taiwan;
+and Shanghai, China. In her work, she is interested in
+animism, collective myth-making, as well as embodied
+narratives. Her practice considers how images construct
+belief, and how memory, performance, and narrative become
+entangled through acts of filming and viewing.
+
+<p>Li is the recipient of the 2025-2026 VMFA graduate arts
+fellowship award and the 2024 UVA Distinguished Artist
+Award. Her 2024 feature film Gui Zhou was selected at the
+Asian American International Film Festival in New York, NY.
+They received their BA from the University of Virginia in Studio
+Art and English in 2025, concentrating in film and creative
+writing.
+				</div>
+			</section>
+		</div>
+	</div>
+</body>
+
+<script src="script.js"></script>

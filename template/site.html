@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html> -->
+<link rel=stylesheet href="style.css">
+
+<body>
+	<div id="sidebar">
+		<ul>
+			<li id="but_films">films</li>
+			<li id="but_shows">shows</li>
+			<li id="but_bio">bio/cv</li>
+		</ul>
+	</div>
+	<div id="sidebar2">
+		<div id="sidebar_films" hidden>
+			<ul>
+				{{films_sidebar}}
+			</ul>
+		</div>
+		<div id="sidebar_shows" hidden>
+			<ul>
+				{{shows_sidebar}}
+			</ul>
+		</div>
+	</div>
+	<div id="content">
+		<div id="section_home" class="content_section">
+			<h1>Jolinna Li</h1>
+			<!-- <img src="/media/stills/napa/1.webp" alt="horse" id="horse">
+			<img src="/media/stills/home-remedies/3.webp" alt="fruit" id="fruit"> -->
+		</div>
+		<div id="section_films" class="content_section" hidden>
+			<div id="film_list_wrapper" class="content_wrapper">
+				<div id="film_list" class="content">
+					{{films}}
+				</div>
+			</div>
+		</div>
+		<div id="section_shows" class="content_section" hidden>
+			<div id="show_list_wrapper" class="content_wrapper">
+				<div id="show_list" class="content">
+					{{shows}}
+				</div>
+			</div>
+		</div>
+		<div id="section_bio" class="content_section" hidden>
+			<div id="bio_wrapper" class="content_wrapper">
+				<h1>About</h1>
+				<div id="bio">
+					<img src="https://jolinnaliarchive.github.io/media/bio/0.webp">
+					<div id="bio-text">
+						<p>Jolinna Li is an artist, writer, and filmmaker born and raised between Charlottesville, Virginia; Taipei, Taiwan; and Shanghai, China. She is currently based in Taiwan but will be moving to Los Angeles in the Spring. </p>
+						<br>
+						<p>Li is the recipient of the 2025-2026 VMFA graduate arts fellowship award and the 2024 UVA Distinguished Artist Award. Her 2024 feature film Gui Zhou was selected at the Asian American International Film Festival in New York, NY. They received their BA from the University of Virginia in Studio Art and English in 2025, concentrating in film and creative writing.</p>
+						<br>
+						<p>Li is interested in leveraging filmic architecture in combination with nested story structures to explore the tension and tenderness that define the human experience. Li's approach is always considering the relationships between the camera, gaze, and power—how visual framing reinforces dynamics of vulnerability and agency. These explorations rooted in personal encounters are then tested and escalated into a broader examination of the gaps within generational, geographical, and emotional landscapes. Individuals are bound by the thresholds of the frame as they reckon with  irreconcilable losses due to the failure of political and economic structures. But those same individuals also resist and revolt, and present-day, collective myth making emerges.</p>
+					</div>
+					<div> Contact: <a href="mailto:jolinnayli@gmail.com"><u>jolinnayli@gmail.com</u></a> <br> CV: <a target="_blank" href="./Li_Jolinna_CV.pdf"><u>PDF</u></a> </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="script.js"></script>
