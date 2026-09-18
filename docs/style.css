@@ -227,8 +227,8 @@ i { font-style: italic }
 .page p { margin-bottom: 2rem }
 
 #namebut { letter-spacing: -0.12rem }
-#namebut :hover { cursor: pointer }
-.img-box :hover { cursor: pointer }
+#namebut:hover { cursor: pointer }
+.img-box:hover { cursor: pointer }
 
 .align_under_name { padding-top: 6rem }
 
