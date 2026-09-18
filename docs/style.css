@@ -219,7 +219,7 @@ h2 {
 
 i { font-style: italic }
 
-#bio { max-width: 60rem; p { text-align: justify }; display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.6rem;
+#bio { max-width: 60rem; p { text-align: justify }; display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem;
 
 }
 
