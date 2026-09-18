@@ -215,11 +215,13 @@ h2 {
 .vpage { max-width: 75rem }
 
 .right_float { float: right; margin: 0 0 1rem 2.5rem; width: max(25rem, 70%) }
-.skinny { width: min(25rem, max(20rem, 60%)) }
+/* .skinny { width: min(25rem, max(20rem, 60%)) } */
 
 i { font-style: italic }
 
-#bio { max-width: 60rem }
+#bio { max-width: 60rem; p { text-align: justify }; display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.6rem;
+
+}
 
 .page h2, .page h1 { margin-bottom: 2rem }
 .page p { margin-bottom: 2rem }
@@ -283,6 +285,8 @@ i { font-style: italic }
 
 
 @media (max-width: 70rem) {
+
+    #bio { .vstack1 { order: -1 }; grid-template-columns: 1fr}
 
     #sidebar { padding: 1.2rem 1.5rem 1.2rem 1.5rem }
     .content_scrollcontainer { padding: 1.2rem }
