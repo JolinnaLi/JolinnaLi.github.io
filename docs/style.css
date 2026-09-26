@@ -180,10 +180,12 @@ h2 {
     }
     .location { margin-top: 1rem }
     #installation_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        figure { img { max-height: unset; aspect-ratio: 3/2; } width: 100%; }
+
         font-size: 1.2rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 4rem 6rem;
+        gap: 2rem;
         flex-direction: row;
         /* grid-template-rows: 35rem min-content min-content; */
         /* grid-auto-flow: column; */
@@ -302,7 +304,10 @@ i { font-style: italic }
     .image-grid { grid-template-columns: 1fr; width: 100% }
     body { grid-template-columns: 1fr; grid-template-rows: unset; height: unset; overflow: auto; }
     #sidebar { height: min-content }
-    #installation_grid { flex-direction: column; flex-wrap: nowrap; figure { img { max-height: unset } width: 100%; } }
+
+    #page_installation {
+        #installation_grid { grid-template-columns: 1fr; figure { img { max-height: unset } width: 100%; } }
+    }
 
     .right_float { width: 100% }
 
