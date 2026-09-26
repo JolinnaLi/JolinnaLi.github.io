@@ -278,6 +278,8 @@ i { font-style: italic }
     .rg3 { grid-template-columns: 1fr 1fr 1fr; .my-p {  display: flex; align-items: center } }
 }
 
+.is-hidden { display: none !important }
+
 #page_home {
     display: flex;
     flex-direction: column;
