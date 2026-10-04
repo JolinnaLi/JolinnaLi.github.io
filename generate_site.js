@@ -8,6 +8,34 @@ const MYDIR = dirname(import.meta.url).replace(/^file:\/\//, '')
 Array.prototype.to_h = function() { return Object.fromEntries(this) }
 Object.prototype.to_a = function() { return Object.entries(this) }
 Array.prototype.last = function() { return this[this.length - 1] }
+
+String.prototype.lines = function() {
+	const trimmed = this.trim();
+	return trimmed ? trimmed.split(/\n+/).map(line => line.trim()) : [];
+}
+
+Array.prototype.unsplit = function(sep) {
+	return !sep ? this.join('') : this.join(sep)
+}
+
+Array.prototype.unlines = function() {
+	return this.unsplit('\n')
+}
+
+function safe(strings, ...values) {
+  // Check if any interpolated value is null, undefined, or missing
+  const hasMissingValue = values.some(val => val === null || val === undefined);
+
+  if (hasMissingValue) {
+    return '';
+  }
+
+  // If all values are valid, reconstruct the full string
+  return strings.reduce((result, currentString, index) => {
+    return result + currentString + (values[index] ?? '');
+  }, '');
+}
+
 const assert = (cond, msg) => {
 	if (!cond) throw `Assertion failed: ${msg}`
 }
@@ -22,7 +50,6 @@ let { pages } = JSON.parse(await Deno.readTextFile(Deno.args[0]))
 
 for (const page of pages) {
 	page.group ??= "films"
-	page.stills = page.stills.map(x => x.replace(/^media/, '/media'))
 }
 
 // (a -> b) => [a] => { b: [a] }
@@ -41,35 +68,35 @@ const projects_by_group = partition(x => x.group)(pages)
 const project_by_id = pages.map(x => [x.id, x]).to_h()
 
 const film_ids = `
+car-dreams
+the-heart-is-an-engine
+
+stories-of-the-sea
+guizhou
+
 home-remedies
 napa
-whats-the-hurry
-series-of-experiments
-guizhou
+
 a-rolling-stone-gathers-no-moss
 animus
-crows-mouth-film
-home-of-rocks
-fairytale
+
+series-of-experiments
 me-and-my-babysitter
-growing-and-leaving
-intro-film
-`.trim().split('\n')
+`.lines()
 
 const show_ids = `
 the-womb-is-an-altar-of-all-the-things-i-miss
 the-hand-is-no-ones
-`.trim().split('\n')
+`.lines()
 
 // console.log(film_ids.)
 const films = film_ids.map(id => project_by_id[id])
 const shows = show_ids.map(id => project_by_id[id])
 // console.error(films)
 
-const site_template = await Deno.readTextFile(`${MYDIR}/template/site.html`)
+const site_template = await Deno.readTextFile(`${MYDIR}/template/TEST.html`)
 
 const makeVideoDisplay = page => {
-	return ''
 	const { yt, vimeo, title_display } = page
 	if (yt && vimeo) {
 		throw `Unexpected both yt and vimeo..: ${page.id}`
@@ -111,8 +138,33 @@ const make_stills_slide = ({ stills }) => `
 `
 
 const films_content = films.map(project => {
-	const { id, stills, title_display, date, blocks_html } = project
+	const { id, stills, four_pics, title_display, date, blocks_html, runtime_display, background } = project
 	return `
+
+<div id="film_${id}" class="page filmpage"><div class="content_scrollcontainer">
+	<main>
+		<h2>${title_display}${safe` | ${runtime_display}`}</h2>
+
+		${safe`<p class="subtitle">${background}</p>`}
+
+		<div class="image-grid">
+			${four_pics.map(href => `<div class="img-box"><img src="${href}" alt="Goldfish"></div>`).unlines()}
+		</div>
+
+		<div class="summary">${blocks_html}</div>
+
+		${makeVideoDisplay(project)}
+
+	</main>
+	</div>
+</div>
+
+`
+}).unlines()
+
+/*
+
+
 <section id="${id}" class="film">
 <div class="film_description">
 	<h1>${title_display}</h1>
@@ -122,8 +174,8 @@ const films_content = films.map(project => {
 ${makeVideoDisplay(project)}
 ${make_stills_slide(project)}
 </section>
-`
-}).join('')
+
+*/
 
 const shows_content = shows.map(project => {
 	const { id, stills, title_display, date, blocks_html } = project
@@ -147,8 +199,18 @@ const make_sidebar_content = projects => projects.map(project => {
 	return `<li><a href="#${id}">${title_display}</a></li>`
 }).join('')
 
-const films_sidebar_content = make_sidebar_content(films)
-const shows_sidebar_content = make_sidebar_content(shows)
+const film_menu = films.map(project => {
+	const { id, stills, thumb, four_pics, title_display, date, blocks_html, runtime_display, background } = project
+	return `
+<div>
+	<a href="#${id}"><img src="${thumb}" /></a>
+	<div><a href="#${id}">${title_display}</a></div>
+	${safe`<div>${runtime_display}</div>`}
+</div>
+
+`
+}).unlines()
+
 
 const idToGroup = [...films, ...shows].map(({ id, group }) => [id, group]).to_h()
 
@@ -158,9 +220,15 @@ window.idToGroup = ${JSON.stringify(idToGroup)}
 </script>
 ` +
 	site_template
-		.replace("{{films}}", films_content).replace("{{films_sidebar}}", films_sidebar_content)
-		.replace("{{shows}}", shows_content).replace("{{shows_sidebar}}", shows_sidebar_content)
+		.replace("<!-- add: film_grid -->", film_menu.lines().unsplit())
+		.replace("<!-- add: films -->", films_content.lines().unsplit())
+
+// normalize
+site_html = site_html.replaceAll('../../media/docs/stills', '/media/stills')
 
 site_html = site_html.replace(/\/?(media\/stills\/[^'"]+)/g, 'https://jolinnaliarchive.github.io/$1')
 
-console.log(site_html)
+// site_html = site_html.replace(/\/?media\/stills\/([^'"]+)/g, '../../media/docs/stills/$1')
+
+console.log(site_html);
+
