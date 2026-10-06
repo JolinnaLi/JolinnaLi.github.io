@@ -288,7 +288,7 @@ i { font-style: italic }
     padding-right: var(--body-hgap);
     padding-bottom: var(--body-vgap);
     font-size: 1.2rem;
-    pre { color: var(--grey) }
+    #status-subtext { color: var(--grey) }
     img { padding: 1rem 8rem 1rem 8rem}
 
     #misc {
@@ -299,7 +299,7 @@ i { font-style: italic }
 
 }
 
-#status-text { font-size: 1rem }
+#status-text { font-size: .98rem }
 
 
 @media (max-width: 70rem) {
