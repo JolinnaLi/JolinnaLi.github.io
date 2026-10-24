@@ -92,12 +92,12 @@ let currPage = ''
 const showPage = pageName => {
 	console.log("Show ", pageName)
 	pages.filter(p => p.pageName != pageName).forEach(page => {
-		if (page.element) page.element.hidden = true
+		if (page.element) page.element.classList.add('is-hidden')
 		if (page.button) page.button.className = ''
 	})
 
 	pages.filter(p => p.pageName == pageName).forEach(page => {
-		if (page.element) page.element.hidden = false
+		if (page.element) page.element.classList.remove('is-hidden')
 		if (page.button) page.button.className = 'selected-side'
 
 		if (page.pageTitle) {

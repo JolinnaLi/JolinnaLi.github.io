@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* 1. Define the parent container to be measured */
+    .parent {
+      container-type: size;
+      height: 200px;
+      resize: vertical; /* Allows dragging height in browser */
+      overflow: auto;
+      background: #eee;
+      padding: 10px;
+    }
+
+    /* 2. Default style for the child element */
+    .child {
+      height: 50px;
+      background: lightcoral;
+      transition: height 0.3s;
+    }
+
+    /* 3. The container query trigger */
+    @container (min-height: 300px) {
+      .child {
+        height: 150px;
+        background: lightgreen;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <p>Drag the bottom-right corner of the gray box down:</p>
+
+  <div class="parent">
+    <div class="child"></div>
+  </div>
+
+</body>
+</html>
