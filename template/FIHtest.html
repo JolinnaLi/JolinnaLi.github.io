@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Loading Screen</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+        }
+
+        #loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            /* White border removed */
+            box-sizing: border-box;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease;
+            opacity: 1;
+        }
+
+        #loading-overlay.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #loading-overlay video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .main-content {
+            padding: 60px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Loading Screen Overlay -->
+    <div id="loading-overlay">
+        <video id="intro-video" src="file:///C:\Users\z\Downloads\Fish Animation.mp4" autoplay muted playsinline></video>
+    </div>
+
+    <!-- Your Website Content -->
+    <div class="main-content">
+        <h1>Welcome to My Website</h1>
+        <p>Your content appears smoothly once the overlay fades out.</p>
+    </div>
+
+    <script>
+        const overlay = document.getElementById('loading-overlay');
+        const video = document.getElementById('intro-video');
+        let isFading = false;
+
+        function dismissOverlay() {
+            if (isFading) return;
+            isFading = true;
+            overlay.classList.add('fade-out');
+
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 800);
+        }
+
+        // 1. Normal video ending condition
+        video.addEventListener('timeupdate', () => {
+            if (video.duration - video.currentTime <= 0.7 && !isFading) {
+                dismissOverlay();
+            }
+        });
+        video.addEventListener('ended', dismissOverlay);
+
+        // 2. Mouse Click triggers immediate fade-out
+        window.addEventListener('click', dismissOverlay);
+
+        // 3. Accumulated Mouse Movement Tracker (for active movement without accidental triggers)
+        let mouseScore = 0;
+        const targetScore = 400; // Total pixels of active movement needed to trigger
+        let lastX = null;
+        let lastY = null;
+
+        window.addEventListener('mousemove', (e) => {
+            if (isFading) return;
+
+            if (lastX !== null && lastY !== null) {
+                let dx = e.clientX - lastX;
+                let dy = e.clientY - lastY;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                mouseScore += distance;
+
+                if (mouseScore >= targetScore) {
+                    dismissOverlay();
+                }
+            }
+
+            lastX = e.clientX;
+            lastY = e.clientY;
+        });
+
+        // 4. Keyboard or Mobile Touch alternatives
+        window.addEventListener('keydown', dismissOverlay, { once: true });
+        window.addEventListener('touchstart', dismissOverlay, { once: true });
+    </script>
+
+</body>
+</html>
