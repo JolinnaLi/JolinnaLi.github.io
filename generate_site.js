@@ -68,6 +68,9 @@ const projects_by_group = partition(x => x.group)(pages)
 const project_by_id = pages.map(x => [x.id, x]).to_h()
 
 const film_ids = `
+my-dearest
+swoop
+
 car-dreams
 the-heart-is-an-engine
 
@@ -139,6 +142,9 @@ const make_stills_slide = ({ stills }) => `
 
 const films_content = films.map(project => {
 	const { id, stills, four_pics, title_display, date, blocks_html, runtime_display, background } = project
+
+	const single_col_class = project.single_column_stills ? 'single_col' : null
+
 	return `
 
 <div id="film_${id}" class="page filmpage"><div class="content_scrollcontainer">
@@ -147,7 +153,7 @@ const films_content = films.map(project => {
 
 		${safe`<p class="subtitle">${background}</p>`}
 
-		<div class="image-grid">
+		<div class="image-grid${safe` ${single_col_class}`}">
 			${four_pics.map(href => `<div class="img-box"><img src="${href}" alt="Goldfish"></div>`).unlines()}
 		</div>
 

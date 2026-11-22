@@ -94,7 +94,7 @@ body
 }
 
 #overlay-content {
-    width: 60%; height: 60%; display: flex; justify-content: center; align-items: center;
+    max-width: 60%; max-height: 60%; display: flex; justify-content: center; align-items: center;
 }
 
 .content_scrollcontainer { overflow-y: auto; max-height: 100%; height: 100% }
@@ -173,19 +173,20 @@ h2 {
     }
 }
 
+.single_col { grid-template-columns: 1fr }
+
 #page_installation {
     figure {
         img { max-height: 25rem; flex: none; flex-shrink: 0 }
-        display: flex; flex-direction: column; gap: 1.5rem; color: var(--grey);
+        display: flex; flex-direction: column; gap: 0.5rem
     }
-    .location { margin-top: 1rem }
     #installation_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
         figure { img { max-height: unset; aspect-ratio: 3/2; } width: 100%; }
 
         font-size: 1.2rem;
-        gap: 2rem;
+        gap: 3rem;
         flex-direction: row;
         /* grid-template-rows: 35rem min-content min-content; */
         /* grid-auto-flow: column; */
@@ -276,6 +277,14 @@ i { font-style: italic }
     .rg1 { grid-template-columns: 1fr 1fr; }
     .rg2 { grid-template-columns: 1fr 3fr 1fr; }
     .rg3 { grid-template-columns: 1fr 1fr 1fr; .my-p {  display: flex; align-items: center } }
+}
+
+#installation_once_again {
+    img { aspect-ratio: 3/2 }
+}
+
+#installation_en_route {
+    img { aspect-ratio: 16/9 }
 }
 
 .is-hidden { display: none !important }
