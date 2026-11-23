@@ -94,9 +94,10 @@ body
 }
 
 #overlay-content {
+    height: 100%; width: 100%;
     display: flex; justify-content: center; align-items: center;
-    #overlay-media-container { display: flex; justify-content: center; align-items: center }
-    img { max-width: 60vh; max-height: 100vh }
+    #overlay-media-container { height: 100%; width: 100%; display: flex; justify-content: center; align-items: center }
+    img { width: 80%; max-width: 80vh; max-height: 100vh }
 }
 
 .content_scrollcontainer { overflow-y: auto; max-height: 100%; height: 100% }
@@ -188,7 +189,7 @@ h2 {
     #installation_grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        figure { img { max-height: unset; aspect-ratio: 3/2; } width: 100%; }
+        figure { img { max-height: unset; aspect-ratio: 3/2; object-fit: cover; } width: 100%; }
         .location { color: var(--grey); font-size: 1rem; line-height: 1.4 }
 
         font-size: 1.2rem;
@@ -260,6 +261,7 @@ i { font-style: italic }
 }
 
 #installation_hand {
+    .image-grid { img { aspect-ratio: 3/2;}}
     .rowgrid { display:  grid; gap: 2rem; margin-bottom: 2rem }
     .rg1 { grid-template-columns: 1fr 1fr }
     .right_float { width: 40%; margin-right: 10%; }
