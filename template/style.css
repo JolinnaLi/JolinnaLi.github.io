@@ -99,8 +99,11 @@ body
 
 .content_scrollcontainer { overflow-y: auto; max-height: 100%; height: 100% }
 .page { height: 100%; overflow: hidden; }
-#film_grid { width: max(50rem, 70%); display: grid; gap: 1rem 2rem; grid-template-columns: 1fr 1fr;
-img { aspect-ratio: 16/9; object-fit: cover }}
+#film_grid {
+    width: max(50rem, 70%); display: grid; gap: 1rem 2rem; grid-template-columns: 1fr 1fr;
+    img { aspect-ratio: 16/9; object-fit: cover }
+    .runtime { color: var(--grey); font-size: 1rem }
+}
 
 .container {
     max-width: 900px;
@@ -184,6 +187,7 @@ h2 {
         display: grid;
         grid-template-columns: 1fr 1fr;
         figure { img { max-height: unset; aspect-ratio: 3/2; } width: 100%; }
+        .location { color: var(--grey); font-size: 1rem; line-height: 1.4 }
 
         font-size: 1.2rem;
         gap: 3rem;
@@ -331,7 +335,7 @@ i { font-style: italic }
     #sidebar { height: min-content }
 
     #page_installation {
-        #installation_grid { grid-template-columns: 1fr; figure { img { max-height: unset } width: 100%; } }
+        #installation_grid { grid-template-columns: 1fr; figure { img { max-height: unset } width: 100% } }
     }
 
     .right_float { width: 100% }
