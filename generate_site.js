@@ -211,7 +211,7 @@ const film_menu = films.map(project => {
 <div>
 	<a href="#${id}"><img src="${thumb}" /></a>
 	<div><a href="#${id}">${title_display}</a></div>
-	${safe`<div>${runtime_display}</div>`}
+	${safe`<div class="runtime">${runtime_display}</div>`}
 </div>
 
 `
